@@ -1,0 +1,13 @@
+---
+- name: task for Slave1
+  hosts: slave1
+  become: true
+  tasks: 
+   - name: install apache2 in Slave1
+     apt: name=apache2 state=latest
+- name: task for Slave2 
+  hosts: slave2
+  become: true
+  tasks: 
+   - name: install nginx in Slave2 
+     apt: name=nginx state=latest
