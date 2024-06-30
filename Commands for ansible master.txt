@@ -1,0 +1,19 @@
+cd .ssh
+ls
+ssh-keygen   // clicked on enter to slave the key path//
+ls
+cat id_ed25519                  // Contains private key//
+cat id_ed25519.pub           // copied and pasted the public key in slave 1 and slave2 //
+cd /etc/ansible/
+ls
+sudo nano hosts                        // added the private IP of slave1 and slave2//
+ansible -m ping all
+
+----Once the connection is established , ran the yaml files
+---------------------------------------------- 
+ansible-playbook play1.yaml --syntax-check
+ansible-playbook play1.yaml
+
+
+ansible-playbook play2.yaml --syntax-check
+ansible-playbook play2.yaml
